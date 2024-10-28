@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faturamento e Kanban</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Faturamento e Kanban</h1>
+    </header>
+
+    <div id="kanban">
+        <div id="pendente" class="kanban-coluna">
+            <h2>Pendentes</h2>
+            <div class="kanban-list"></div>
+        </div>
+        <div id="concluidos" class="kanban-coluna">
+            <h2>Concluídos</h2>
+            <div class="kanban-list"></div>
+        </div>
+    </div>
+
+    <button onclick="irParaCardapio()">Voltar ao Cardápio</button>
+</div>
+
+<script src="kanban.js"></script>
+</body>
+</html>

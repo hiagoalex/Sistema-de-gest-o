@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flow Master</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <img src="Flow Master.png" alt="Logo da Empresa" class="logo">
+        <h1>Cardápio-Flow Master</h1>
+    </header>
+    
+    <div class="cardapio" id="cardapio">
+        <div class="prato" data-categoria="pizza">
+            <h3>Pizza Margherita</h3>
+            <img src="https://example.com/pizza-margherita.jpg" alt="Pizza Margherita" />
+            <p>Preço: R$25</p>
+            <div class="quantidade">
+                <button onclick="alterarQuantidade('quantidade-1', -1)">-</button>
+                <span id="quantidade-1" class="quantidade-num">1</span>
+                <button onclick="alterarQuantidade('quantidade-1', 1)">+</button>
+            </div>
+            <button class="adicionar" onclick="adicionarAoCarrinho('Pizza Margherita', 25, document.getElementById('quantidade-1').textContent)">Adicionar ao Carrinho</button>
+        </div>
+
+        <div class="prato" data-categoria="burger">
+            <h3>Burger Clássico</h3>
+            <img src="https://example.com/burger-classico.jpg" alt="Burger Clássico" />
+            <p>Preço: R$20</p>
+            <div class="quantidade">
+                <button onclick="alterarQuantidade('quantidade-2', -1)">-</button>
+                <span id="quantidade-2" class="quantidade-num">1</span>
+                <button onclick="alterarQuantidade('quantidade-2', 1)">+</button>
+            </div>
+            <button class="adicionar" onclick="adicionarAoCarrinho('Burger Clássico', 20, document.getElementById('quantidade-2').textContent)">Adicionar ao Carrinho</button>
+        </div>
+
+        <div class="prato" data-categoria="salada">
+            <h3>Salada Caesar</h3>
+            <img src="https://example.com/salada-caesar.jpg" alt="Salada Caesar" />
+            <p>Preço: R$15</p>
+            <div class="quantidade">
+                <button onclick="alterarQuantidade('quantidade-3', -1)">-</button>
+                <span id="quantidade-3" class="quantidade-num">1</span>
+                <button onclick="alterarQuantidade('quantidade-3', 1)">+</button>
+            </div>
+            <button class="adicionar" onclick="adicionarAoCarrinho('Salada Caesar', 15, document.getElementById('quantidade-3').textContent)">Adicionar ao Carrinho</button>
+        </div>
+        
+        <!-- Adicione mais produtos aqui -->
+    </div>
+
+    <h2>Carrinho</h2>
+    <ul id="carrinho"></ul>
+    <p id="total"></p>
+    <button id="limpar-carrinho" onclick="limparCarrinho()">Limpar Carrinho</button>
+
+    <section id="pagamento-section">
+        <h2>Forma de Pagamento</h2>
+        <div id="pagamento-options">
+            <label>
+                <input type="radio" name="pagamento" value="dinheiro" checked>
+                Dinheiro 💵
+            </label>
+            <label>
+                <input type="radio" name="pagamento" value="pix">
+                PIX
+            </label>
+        </div>
+
+        <h2>Endereço de Entrega</h2>
+        <div id="entrega-opcoes">
+            <label>
+                <input type="radio" name="tipo-entrega" value="entrega" checked>
+                Entrega
+            </label>
+            <label>
+                <input type="radio" name="tipo-entrega" value="retirada">
+                Retirada
+            </label>
+        </div>
+        
+        <form id="endereco-form" onsubmit="finalizarCompra(event)">
+            <input type="text" id="cep" placeholder="CEP" required maxlength="10" onblur="buscarEndereco()" />
+            <input type="text" id="nome" placeholder="Nome" required />
+            <input type="text" id="endereco" placeholder="Endereço" required />
+            <input type="text" id="bairro" placeholder="Bairro" required />
+            <button type="submit" id="finalizar-compra">Finalizar Compra 💳</button>
+        </form>
+    </section>
+
+    <h2>Comanda</h2>
+    <pre id="comanda" style="display: none;"></pre>
+    <div id="aplausos" class="aplausos" style="display: none;">👏👏👏 Parabéns pela compra! 👏👏👏</div>
+    <button onclick="imprimirComanda()">Imprimir</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

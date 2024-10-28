@@ -1,0 +1,94 @@
+/* Estilos Gerais */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+}
+
+/* Estilos da Logo */
+.logo {
+    width: 50px; /* Ajuste o tamanho conforme necessário */
+    height: auto; /* Mantém a proporção */
+    margin-bottom: 10px; /* Espaço abaixo da logo */
+}
+
+/* Estilos do Carrinho */
+#carrinho {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+#carrinho li {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 5px 0;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Estilos do Cardápio */
+.cardapio {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 20px 0;
+}
+
+.prato {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    width: 30%;
+    margin: 10px;
+}
+
+button {
+    background-color: red; /* Cor de fundo vermelha */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px; /* Diminuído */
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: darkred; /* Cor mais escura ao passar o mouse */
+}
+
+/* Estilos da Comanda */
+#comanda {
+    border: 2px solid #28a745; /* Cor da borda verde */
+    background-color: #d4edda; /* Fundo verde claro */
+    color: #155724; /* Texto em verde escuro */
+    padding: 15px; /* Espaçamento interno */
+    border-radius: 8px; /* Bordas arredondadas */
+    white-space: pre-wrap; /* Permite quebra de linha */
+    margin: 20px 0; /* Margem superior e inferior */
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    .cardapio {
+        flex-direction: column;
+        align-items: center;
+    }
+    .prato {
+        width: 90%;
+    }
+    button {
+        width: 100%; /* Botões em largura total em telas pequenas */
+    }
+}
